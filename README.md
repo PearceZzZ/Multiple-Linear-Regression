@@ -16,3 +16,9 @@ library(plotly)
 **`car`**: Calculates Variance Inflation Factor (VIF) to detect multicollinearity.  
 **`plotly`**: Creates interactive 3D scatterplots.
 
+#Load The Data set
+```r
+file_path <- "~/Campus/STATPROB/Multiple_Linear_Regression_Data.xlsx" # Specify the file path
+data <- read_excel(file_path)
+```
+The **`Data Set file`** can be found on this repository named **`Multiple_Linear_Regression_Data.xlsx`**
