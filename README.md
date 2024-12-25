@@ -70,7 +70,7 @@ Fit a multiple linear regression model with **`Salary`** as the dependent variab
 par(mfrow = c(2, 2))
 plot(model)
 ```
-* Purpose: Creates diagnostic plots to check
+* **Purpose**: Creates diagnostic plots to check
    1. Residuals vs. Fitted: Checks linearity.
    2. Normal Q-Q Plot: Assesses normality of residuals.
    3. Normal Q-Q Plot: Assesses normality of residuals.
@@ -83,3 +83,13 @@ print(vif_values)
 ```
 * **Purpose**: Calculate Variance Inflation Factor (VIF) to detect multicollinearity.
   * VIF > 5 indicates potential multicollinearity.
+
+ ## Normality of Residuals
+ ```r
+shapiro_test <- shapiro.test(residuals(model)) # Shapiro-Wilk test
+print(shapiro_test)
+```
+* **Purpose**: Perform the Shapiro-Wilk test to check if residuals follow a normal distribution.
+  * A p-value > 0.05 suggests residuals are approximately normal.
+
+### Visualization
