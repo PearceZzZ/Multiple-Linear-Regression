@@ -63,3 +63,23 @@ Fit a multiple linear regression model with **`Salary`** as the dependent variab
  : Explains how much variance in **`Salary`** is explained by the predictors.
   * **p-values**: Tests the statistical significance of predictors.
   * **F-statistic**: Tests the overall significance of the model.
+
+### Checking Assumptions
+## Linearity
+```r
+par(mfrow = c(2, 2))
+plot(model)
+```
+* Purpose: Creates diagnostic plots to check
+   1. Residuals vs. Fitted: Checks linearity.
+   2. Normal Q-Q Plot: Assesses normality of residuals.
+   3. Normal Q-Q Plot: Assesses normality of residuals.
+   4. Residuals vs. Leverage: Identifies influential points.
+
+## Multicollinearity
+```r
+vif_values <- vif(model)
+print(vif_values)
+```
+* **Purpose**: Calculate Variance Inflation Factor (VIF) to detect multicollinearity.
+  * VIF > 5 indicates potential multicollinearity.
