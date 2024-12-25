@@ -28,5 +28,13 @@ The **`Data Set file`** can be found on this repository named **`Multiple_Linear
 data <- read.csv("Salary_Data.csv")
 head(data)
 ```
-**`Purpose`**: Load the dataset from the file Salary_Data.csv and display the first few rows using head().
+**`Purpose`**: Load the dataset from the file Salary_Data.csv and display the first few rows using head().  
 The dataset contains columns: Salary, Age, Experience, and Education_Level.
+
+### Checking the Structure of the Data
+```r
+str(data)
+summary(data)
+```
+**`str(data)`**: Displays the structure of the dataset, including data types for each variable (e.g., numeric, factor).  
+**`summary(data)`**: Provides a statistical summary of each column (e.g., mean, median, min, max).  
