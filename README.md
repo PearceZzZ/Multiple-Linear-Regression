@@ -47,7 +47,7 @@ summary(model)
 Fit a multiple linear regression model with **`Salary`** as the dependent variable and **`Age`**, **`Experience`**, and **`Education_Level`** as independent variables.  
  **`lm()`**: Fits the linear model.  
 * **`summary(model)`**: Outputs important statistics like:  
-  * Coefficients (
+  * **Coefficients** (
 𝛽
 0
 ,
@@ -58,4 +58,9 @@ Fit a multiple linear regression model with **`Salary`** as the dependent variab
 2
 ,
 …
- ,…): Shows the effect of each predictor on Salary.
+ ,…): Shows the effect of each predictor on**`Salary`**.
+  * R 
+2
+ : Explains how much variance in **`Salary`** is explained by the predictors.
+  * **p-values**: Tests the statistical significance of predictors.
+  * **F-statistic**: Tests the overall significance of the model.
