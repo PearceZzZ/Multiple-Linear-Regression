@@ -93,3 +93,53 @@ print(shapiro_test)
   * A p-value > 0.05 suggests residuals are approximately normal.
 
 ## Visualization
+### Pairwise Relationships
+```r
+pairs(data[, c("Age", "Experience", "Education_Level", "Salary")], panel = panel.smooth)
+```
+* **Purpose**:  Create a scatterplot matrix showing relationships between all variables, with linear trends for visual confirmation of relationships.
+
+### Actual vs Predicted Plot
+```r
+data$predicted <- predict(model)
+ggplot(data, aes(x = predicted, y = Salary)) +
+  geom_point(color = "blue") +
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  labs(title = "Actual vs Predicted Values", x = "Predicted", y = "Actual") +
+  theme_minimal()
+```
+* **Purpose**: Visualize how well the predicted values align with the actual values of **`Salary`**.
+  * Blue points: Observations.
+  * Red line: Trend line showing model fit.
+
+### 3D Visualization
+```r
+fig <- plot_ly(data, x = ~Age, y = ~Experience, z = ~Salary, 
+               type = 'scatter3d', mode = 'markers',
+               marker = list(size = 3, color = ~Salary, colorscale = 'Viridis')) %>%
+  layout(scene = list(
+    xaxis = list(title = 'Age'),
+    yaxis = list(title = 'Experience'),
+    zaxis = list(title = 'Salary')
+  ))
+fig
+```
+* **Purpose**: Interactive 3D scatterplot showing the relationship between **`Age`**, **`Experience`**, and **`Salary`**.
+
+## Interpretation
+```r
+cat("\n--- Interpretation ---\n")
+cat("Coefficients:\n")
+print(coef(model))
+
+cat("\nThe model suggests that:\n")
+cat("1. For every unit increase in Age, the dependent variable Salary changes by", coef(model)["Age"], "units, holding other predictors constant.\n")
+cat("2. For every unit increase in Experience, Salary changes by", coef(model)["Experience"], "units, holding other predictors constant.\n")
+cat("3. For every unit increase in Education_Level, Salary changes by", coef(model)["Education_Level"], "units, holding other predictors constant.\n")
+
+cat("\nAssumptions:\n")
+cat("- Linearity is checked through diagnostic plots.\n")
+cat("- Multicollinearity is assessed using VIF (all values should ideally be < 5).\n")
+cat("- Residual normality is evaluated using the Shapiro-Wilk test. A p-value > 0.05 indicates normality.\n")
+```
+* **Purpose**: Summarize findings and interpret the results, highlighting the relationships and assumptions tested.
