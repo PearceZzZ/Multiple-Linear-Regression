@@ -23,7 +23,7 @@ data <- read_excel(file_path)
 ```
 The **`Data Set file`** can be found on this repository named **`Multiple_Linear_Regression_Data.xlsx`**
 
-## Importing the Dataset
+### Importing the Dataset
 ```r
 data <- read.csv("Salary_Data.csv")
 head(data)
