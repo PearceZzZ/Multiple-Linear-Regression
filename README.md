@@ -59,8 +59,7 @@ Fit a multiple linear regression model with **`Salary`** as the dependent variab
 ,
 …
  ,…): Shows the effect of each predictor on**`Salary`**.
-  * R 
-2
+  * R<sup>2</sup>
  : Explains how much variance in **`Salary`** is explained by the predictors.
   * **p-values**: Tests the statistical significance of predictors.
   * **F-statistic**: Tests the overall significance of the model.
