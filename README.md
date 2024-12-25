@@ -64,8 +64,8 @@ Fit a multiple linear regression model with **`Salary`** as the dependent variab
   * **p-values**: Tests the statistical significance of predictors.
   * **F-statistic**: Tests the overall significance of the model.
 
-### Checking Assumptions
-## Linearity
+## Checking Assumptions
+### Linearity
 ```r
 par(mfrow = c(2, 2))
 plot(model)
@@ -76,7 +76,7 @@ plot(model)
    3. Normal Q-Q Plot: Assesses normality of residuals.
    4. Residuals vs. Leverage: Identifies influential points.
 
-## Multicollinearity
+### Multicollinearity
 ```r
 vif_values <- vif(model)
 print(vif_values)
@@ -84,7 +84,7 @@ print(vif_values)
 * **Purpose**: Calculate Variance Inflation Factor (VIF) to detect multicollinearity.
   * VIF > 5 indicates potential multicollinearity.
 
- ## Normality of Residuals
+ ### Normality of Residuals
  ```r
 shapiro_test <- shapiro.test(residuals(model)) # Shapiro-Wilk test
 print(shapiro_test)
@@ -92,4 +92,4 @@ print(shapiro_test)
 * **Purpose**: Perform the Shapiro-Wilk test to check if residuals follow a normal distribution.
   * A p-value > 0.05 suggests residuals are approximately normal.
 
-### Visualization
+## Visualization
