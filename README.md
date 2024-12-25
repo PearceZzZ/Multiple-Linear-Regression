@@ -7,3 +7,8 @@ if (!require(car)) install.packages("car")
 if (!require(ggplot2)) install.packages("ggplot2")
 if (!require(plotly)) install.packages("plotly")
 
+library(readxl)
+library(ggplot2)
+library(car) 
+library(plotly)
+**\`\`\`**
